@@ -33,6 +33,7 @@ tracing = "0.1.13"
 pretty_assertions = "1.0.0"
 thiserror = "1.0.19"
 ansi-parser = "0.8.0"
+criterion = { version = "0.4", features = ["html_reports"] }
 
 [target.'cfg(target_arch = "wasm32")'.dev-dependencies]
 wasm-bindgen-test = "0.3.15"
@@ -80,3 +81,13 @@ file="CHANGELOG.md"
 search="<!-- next-url -->"
 replace="<!-- next-url -->\n[Unreleased]: https://github.com/yaahc/{{crate_name}}/compare/{{tag_name}}...HEAD"
 exactly=1
+
+[[bench]]
+name = "default_error_creation"
+harness = false
+[[bench]]
+name = "color_error_creation"
+harness = false
+[[bench]]
+name = "fastest_error_creation"
+harness = false
